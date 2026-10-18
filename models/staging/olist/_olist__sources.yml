@@ -1,0 +1,6 @@
+sources:
+  - name: olist
+    meta:
+      external_location: "data/raw/olist_{name}_dataset.csv"
+    tables:
+      - name: orders

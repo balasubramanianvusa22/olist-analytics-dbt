@@ -1,0 +1,20 @@
+# Python virtual environment
+.venv/
+
+# Raw Olist CSVs (download from Kaggle, see README)
+data/
+
+# dbt build output, installed packages, and run logs
+target/
+dbt_packages/
+logs/
+
+# Local DuckDB database built by dbt
+*.duckdb
+*.duckdb.wal
+
+# dbt's anonymous per-user ID
+.user.yml
+
+# Claude Code instructions, kept local
+CLAUDE.md
