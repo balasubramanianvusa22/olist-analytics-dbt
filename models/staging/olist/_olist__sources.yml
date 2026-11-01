@@ -4,3 +4,13 @@ sources:
       external_location: "data/raw/olist_{name}_dataset.csv"
     tables:
       - name: orders
+      - name: customers
+      - name: order_items
+      - name: order_payments
+      - name: order_reviews
+      - name: products
+      - name: sellers
+      - name: product_category_name_translation
+        # this file doesn't follow the olist_<name>_dataset.csv naming pattern
+        meta:
+          external_location: "data/raw/product_category_name_translation.csv"
