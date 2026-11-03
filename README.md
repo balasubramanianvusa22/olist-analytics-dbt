@@ -4,8 +4,29 @@ An analytics engineering portfolio project: a dbt project on the
 [Olist Brazilian E-Commerce dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce),
 running on DuckDB so it builds locally with no warehouse account.
 
-**Status:** early. The orders source and staging model are built. More tables and a
-finance mart (order-to-payment reconciliation) are planned.
+**Status:** in progress. Sources and staging models are built for all eight Olist tables.
+Work is committed in small steps, so the history shows how the project grows.
+
+## Roadmap
+
+- [x] Project setup on DuckDB, with sources defined over the raw CSVs
+- [x] Staging models for every table (`stg_olist__*`): renamed columns, cast types, money as `decimal(10,2)`
+- [ ] Tests and data quality on staging: keys, relationships, accepted values, freshness of order dates
+- [ ] Intermediate models: order lines joined to products and sellers, payments rolled up per order
+- [ ] Core marts: orders fact, customers and sellers dimensions
+- [ ] Finance mart: order-to-payment reconciliation that flags orders whose payments don't match item and freight totals
+- [ ] dbt docs and a lineage graph
+- [ ] CI with GitHub Actions: `dbt build` on every pull request
+
+## Layout
+
+```
+models/
+  staging/olist/      one model per source table, light cleanup only
+  intermediate/       (planned) joins and rollups
+  marts/core/         (planned) facts and dimensions
+  marts/finance/      (planned) reconciliation
+```
 
 ## Run it locally
 
